@@ -19,7 +19,8 @@ const availableIngredients = [
   { name: 'Onion', color: 'lightyellow' },
   { name: 'Cheddar Cheese', color: '#FDE18B' },
   { name: 'Swiss Cheese', color: '#F1E1A8' },
-];
+]
+
 let keyID = 1
 const App = () => {
 

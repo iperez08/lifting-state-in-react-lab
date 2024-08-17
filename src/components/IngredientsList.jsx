@@ -4,16 +4,18 @@
 
 import '../App'
 
-const IngredientButton = ({ ingredient, addToBurger }) => {
+import Ingredient from './Ingredient'
 
-    const handleClick = () => {
-        addToBurger(ingredient)
-    }
+// const IngredientButton = ({ ingredient, addToBurger }) => {
 
-    return (
-        <button onClick={handleClick}>+</button>
-    )
-}
+//     const handleClick = () => {
+//         addToBurger(ingredient)
+//     }
+
+//     return (
+//         <button onClick={handleClick}>+</button>
+//     )
+// }
 
 const IngredientList = (props) => {
     const { ingredients, addToBurger } = props
@@ -22,13 +24,17 @@ const IngredientList = (props) => {
         <ul>
             {ingredients.map((ingredient) => {
                 return (
-                    <li key={ingredient.name} style={{ backgroundColor: ingredient.color }}>
-                        <p>{ingredient.name}</p>
-                        <IngredientButton
-                            ingredient={ingredient}
-                            addToBurger={addToBurger}
-                        />
-                    </li>
+                    // <li key={ingredient.name} style={{ backgroundColor: ingredient.color }}>
+                    //     <p>{ingredient.name}</p>
+                    //     <IngredientButton
+                    //         ingredient={ingredient}
+                    //         addToBurger={addToBurger}
+                    //     />
+                    // </li>
+                    <Ingredient
+                        ingredient={ingredient}
+                        ingredientMethod={addToBurger}
+                    />
                 )
             })}
         </ul>
@@ -36,3 +42,4 @@ const IngredientList = (props) => {
 };
 
 export default IngredientList;
+

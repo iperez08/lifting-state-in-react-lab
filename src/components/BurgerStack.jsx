@@ -7,34 +7,42 @@
 
 import '../App'
 
+import Ingredient from './Ingredient'
 
-const IngredientButton = ({ ingredient, removeFromBurger }) => {
 
-    const handleClick = () => {
-        removeFromBurger(ingredient)
-    }
+// const IngredientButton = ({ ingredient, removeFromBurger }) => {
 
-    return (
-        <button onClick={handleClick}>X</button>
-    )
-}
+//     const handleClick = () => {
+//         removeFromBurger(ingredient)
+//     }
+
+//     return (
+//         <button onClick={handleClick}>X</button>
+//     )
+// }
 
 
 const BurgerStack = ({ stack, removeFromBurger }) => {
-    return <ul>
-        {stack.map((ingredient) => {
-            return (
-                <li key={ingredient.id} style={{ backgroundColor: ingredient.color }}>
-                    <p>{ingredient.name}'s id: {ingredient.id}</p>
-                    <IngredientButton
+    return (
+        <ul>
+            {stack.map((ingredient) => {
+                return (
+                    // <li key={ingredient.id} style={{ backgroundColor: ingredient.color }}>
+                    //     <p>{ingredient.name}</p>
+                    //     <IngredientButton
+                    //         ingredient={ingredient}
+                    //         removeFromBurger={removeFromBurger}
+                    //     />
+                    // </li>
+                    <Ingredient
                         ingredient={ingredient}
-                        removeFromBurger={removeFromBurger}
+                        ingredientMethod={removeFromBurger}
                     />
-                </li>
-            )
-        })}
-    </ul>;
-};
+                )
+            })}
+        </ul>
+    )
+}
 
 export default BurgerStack;
 
